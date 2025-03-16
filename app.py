@@ -4,6 +4,9 @@ import random
 from datetime import datetime
 import requests
 from PyPDF2 import PdfReader, PdfWriter
+from reportlab.pdfgen import canvas
+from reportlab.lib.pagesizes import letter
+from reportlab.lib.colors import red, green
 
 app = Flask(__name__)
 
