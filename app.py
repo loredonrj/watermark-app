@@ -1,3 +1,4 @@
+import os
 from flask import Flask, send_file, request
 import io
 import random
@@ -10,6 +11,14 @@ from reportlab.lib.colors import red, green
 
 app = Flask(__name__)
 
+@app.route("/")
+def hello():
+    return "Hello, World!"
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+    
 # Dictionary mapping PDF identifiers to their remote URLs
 PDF_URLS = {
     "pdf1": "https://drive.google.com/file/d/10r9yw6_4hPKaSY4S1T342phfebZcCtNM",
